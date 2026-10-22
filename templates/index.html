@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Meal Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <div class="logo">
+            🍱 School Meal Management System
+        </div>
+
+        <div>
+            <a href="/signup" class="signup-btn">
+                📝 Sign Up
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Card -->
+
+    <div class="container">
+
+        <h1>Welcome 👋</h1>
+
+        <p class="subtitle">
+            Smart Digital Meal Attendance & Food Planning
+        </p>
+
+        <div class="buttons">
+
+            <a href="/student_login">
+                <button class="student">
+                    👨‍🎓 Student Login
+                </button>
+            </a>
+
+            <a href="/admin_login">
+                <button class="admin">
+                    👨‍💼 Admin Login
+                </button>
+            </a>
+
+        </div>
+
+        <a href="/forgot_password" class="forgot">
+            🔑 Forgot Password?
+        </a>
+        <br>
+
+        <p>
+        New User?
+        <a href="/signup">
+        📝 Register
+        </a>
+        </p>
+
+    </div>
+
+
+    
+
+</body>
+
+</html>

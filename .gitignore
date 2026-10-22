@@ -1,0 +1,6 @@
+meal.db
+meal copy.db
+__pycache__/
+.venv/
+venv/
+.env

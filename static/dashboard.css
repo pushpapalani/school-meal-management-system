@@ -1,0 +1,100 @@
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    margin:0;
+    padding:30px;
+}
+
+h1,h2,h3{
+    text-align:center;
+    color:#2c3e50;
+}
+
+hr{
+    margin:20px 0;
+}
+
+button{
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    margin:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+a{
+    display:inline-block;
+    text-align:center;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+p{
+    font-size:18px;
+    margin:10px 0;
+    text-align:center;
+}
+
+a{
+    text-decoration:none;
+}
+
+canvas{
+    max-width:100%;
+}
+
+.feedback{
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    margin:10px 0;
+}
+/* Dashboard Buttons Center */
+
+body > a,
+body > button{
+    display:inline-block;
+}
+
+
+body{
+    text-align:center;
+}
+
+
+button{
+    width:180px;
+}
+.sms-button{
+
+    text-align:center;
+    margin-top:30px;
+
+}
+
+
+.sms-button a{
+
+    display:inline-block;
+    padding:15px 35px;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:#333;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+}
+
+
+.sms-button a:hover{
+
+    transform:scale(1.05);
+    background:linear-gradient(135deg,#a18cd1,#fbc2eb);
+
+}

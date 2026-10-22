@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Error</title>
+
+<style>
+
+body{
+    height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+
+.card{
+
+    background:white;
+    width:380px;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 25px gray;
+
+}
+
+
+.icon{
+
+    font-size:60px;
+
+}
+
+
+h2{
+
+    color:#e74c3c;
+
+}
+
+
+p{
+
+    color:#555;
+    font-size:18px;
+
+}
+
+
+button{
+
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    border-radius:20px;
+    background:#667eea;
+    color:white;
+    cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<div class="icon">
+{{ icon }}
+</div>
+
+
+<h2>
+{{ title }}
+</h2>
+
+
+<p>
+{{ message }}
+</p>
+
+
+<a href="{{ back_url }}">
+
+<button>
+⬅ Back
+</button>
+
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>

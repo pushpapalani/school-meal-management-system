@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+<h1>📊 Dashboard</h1>
+<hr>
+
+<h2>🍱 Meal Management</h2>
+
+
+
+<a href="/view_students">
+    <button>👨‍🎓 View Students</button>
+</a>
+
+
+<hr>
+<h2>📅 Today's Summary</h2>
+
+<p>Date : {{ today }}</p>
+
+<p>🍳 Breakfast : {{ breakfast }}</p>
+
+<p>🍛 Lunch : {{ lunch }}</p>
+
+<p>🍽 Total Meals : {{ total_meals }}</p>
+
+
+<h2>👨‍🎓 Student Details</h2>
+
+<p>👨‍🎓 Total Students : {{ total_students }}</p>
+
+<p>👦 Boys : {{ boys }}</p>
+
+<p>👧 Girls : {{ girls }}</p>
+
+<p>📱 Smartphone : {{ smartphone }}</p>
+
+<p>📞 Button Phone : {{ button_phone }}</p>
+
+<hr>
+
+
+<div style="width:600px;height:300px;margin:auto">
+
+<canvas id="mealChart"></canvas>
+
+</div>
+
+<h2>🍽 Today's Food Requirement</h2>
+
+<p>
+Breakfast Meals: {{ breakfast }}
+</p>
+
+<p>
+Lunch Meals: {{ lunch }}
+</p>
+
+<hr>
+<h2> 📊 Student Feedback Analysis</h2>
+
+<h3>{{ analysis }}</h3>
+<h2>⭐ Feedback History</h2>
+
+{% for f in feedbacks %}
+
+<p>
+👤 {{ f[0] }}
+
+<br>
+
+⭐ Rating: {{ f[1] }}
+
+<br>
+
+💬 {{ f[2] }}
+
+</p>
+
+<hr>
+
+{% endfor %}
+
+<br><br>
+
+<div class="sms-button">
+
+<a href="/sms_history">
+📞 SMS History
+</a>
+
+</div>
+
+<button type="button" class="back" onclick="history.back()">
+
+⬅ Back
+
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+
+new Chart(
+document.getElementById("mealChart"),
+
+{
+type:"bar",
+
+data:{
+
+labels:["Breakfast","Lunch"],
+
+datasets:[{
+
+label:"Meals",
+
+data:[
+{{ breakfast }},
+{{ lunch }}
+]
+
+}]
+
+}
+
+}
+
+);
+
+</script>

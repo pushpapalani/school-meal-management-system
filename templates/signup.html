@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Sign Up - School Meal Management System</title>
+
+<style>
+
+body{
+
+    background:linear-gradient(135deg,#43e97b,#38f9d7);
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:Arial;
+
+    margin:0;
+
+}
+
+
+.box{
+
+    background:white;
+
+    width:400px;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0px 10px 20px gray;
+
+}
+
+
+h2{
+
+    color:#333;
+
+}
+
+
+h3{
+
+    color:#555;
+
+}
+
+
+input{
+
+    width:90%;
+
+    padding:12px;
+
+    margin:10px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+    box-sizing:border-box;
+
+}
+
+
+button{
+
+    width:95%;
+
+    padding:12px;
+
+    background:#28a745;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#1e7e34;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:#007bff;
+
+    font-weight:bold;
+
+}
+
+
+.password-box{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+
+.password-box input{
+
+    width:90%;
+
+}
+
+
+.password-box span{
+
+    position:absolute;
+
+    right:35px;
+
+    top:22px;
+
+    cursor:pointer;
+
+}
+
+
+.error{
+
+    color:red;
+
+    margin-bottom:10px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+    <h2>🍱 School Meal Management System</h2>
+
+
+    <h3>👨‍🎓 Student Sign Up</h3>
+
+
+    {% if message %}
+
+        <p class="error">
+
+            {{ message }}
+
+        </p>
+
+    {% endif %}
+
+
+    <form method="POST">
+
+
+        <!-- Full Name -->
+
+        <input
+            type="text"
+            name="fullname"
+            placeholder="Full Name"
+            required>
+
+
+        <!-- Phone -->
+
+        <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            required>
+
+
+        <!-- Email -->
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required>
+
+
+        <!-- Password -->
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required>
+
+            <span onclick="showPassword('password')">
+
+                👁
+
+            </span>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                placeholder="Confirm Password"
+                required>
+
+            <span onclick="showPassword('confirm_password')">
+
+                👁
+
+            </span>
+
+        </div>
+
+
+        <button type="submit">
+
+            Create Student Account
+
+        </button>
+
+
+    </form>
+
+
+    <br>
+
+
+    Already have an account?
+
+    <a href="{{ url_for('student_login') }}">
+
+        Student Login
+
+    </a>
+
+
+</div>
+
+
+<script>
+
+function showPassword(id){
+
+    let x = document.getElementById(id);
+
+    if(x.type == "password"){
+
+        x.type = "text";
+
+    }
+    else{
+
+        x.type = "password";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+
