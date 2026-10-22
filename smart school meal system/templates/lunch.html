@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Lunch Attendance</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI',Arial;
+    background:linear-gradient(135deg,#56ab2f,#a8e063);
+
+}
+
+.lunch-card{
+
+    width:380px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
+}
+
+.food-icon{
+
+    font-size:65px;
+
+}
+
+h2{
+
+    color:#27ae60;
+    font-size:28px;
+
+}
+
+p{
+
+    color:#666;
+
+}
+
+.student-info{
+
+    background:#f2f2f2;
+    padding:15px;
+    border-radius:15px;
+    margin:20px 0;
+    text-align:left;
+
+}
+
+.student-info strong{
+
+    color:#27ae60;
+
+}
+
+.student-id{
+
+    font-size:18px;
+    font-weight:bold;
+    color:#34495e;
+    margin-top:5px;
+
+}
+
+button{
+
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:20px;
+    background:#27ae60;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#1e8449;
+    transform:scale(1.03);
+
+}
+
+.back{
+
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    background:#34495e;
+    color:white;
+    padding:12px 30px;
+    border-radius:20px;
+
+}
+
+.footer{
+
+    margin-top:20px;
+    font-size:13px;
+    color:#888;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="lunch-card">
+
+
+<div class="food-icon">
+    🍛
+</div>
+
+<h2>
+    Lunch Attendance
+</h2>
+
+<p>
+    Mark your lunch attendance
+</p>
+
+<!-- Logged-in Student Details -->
+
+<div class="student-info">
+
+    <strong>👨‍🎓 Logged-in Student</strong>
+
+    <div class="student-id">
+        🆔 Student ID: {{ student_id }}
+    </div>
+
+</div>
+
+<form action="/lunch" method="POST" onsubmit="return checkInternet()">
+
+    <button type="submit">
+
+        ✅ Mark Lunch
+
+    </button>
+
+</form>
+
+<a href="/student_dashboard" class="back">
+
+    ⬅ Back
+
+</a>
+
+<div class="footer">
+
+    🍱 Smart Digital Meal Attendance System
+
+</div>
+
+
+</div>
+
+<script>
+
+function checkInternet(){
+
+    if(!navigator.onLine){
+
+        alert("❌ Attendance not submitted. Please check your internet connection.");
+
+        return false;
+    }
+
+    return true;
+}
+
+</script>
+
+</body>
+
+</html>

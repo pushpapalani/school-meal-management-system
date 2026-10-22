@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Login</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    font-family:'Segoe UI',Arial;
+
+}
+
+
+/* Top Navigation */
+
+nav{
+
+    height:72px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 45px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+
+}
+
+.logo-title{
+
+    font-size:27px;
+    font-weight:bold;
+    color:#111;
+
+}
+
+.signup-top{
+
+    background:#2864df;
+    color:white;
+    padding:11px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+
+}
+
+.signup-top:hover{
+
+    background:#1e4fb8;
+
+}
+
+
+/* Login Area */
+
+.login-container{
+
+    min-height:calc(100vh - 72px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+.login-box{
+
+    width:430px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+
+}
+
+
+.logo{
+
+    font-size:60px;
+
+}
+
+
+/* Welcome */
+
+.welcome{
+
+    font-size:28px;
+    font-weight:bold;
+    color:#222;
+    margin-top:5px;
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    color:#55708f;
+    font-size:16px;
+    margin-bottom:25px;
+
+}
+
+
+h1{
+
+    color:#667eea;
+    font-size:25px;
+    margin:10px;
+
+}
+
+
+h2{
+
+    color:#555;
+    margin-bottom:25px;
+
+}
+
+
+/* Input */
+
+.input-box{
+
+    display:flex;
+    align-items:center;
+    background:#f2f2f2;
+    border-radius:15px;
+    padding:12px;
+    margin:15px 0;
+
+}
+
+
+.input-box span{
+
+    font-size:22px;
+    margin-right:10px;
+
+}
+
+
+.input-box input{
+
+    border:none;
+    outline:none;
+    background:none;
+    width:100%;
+    font-size:16px;
+
+}
+
+
+/* Login Button */
+
+button{
+
+    width:100%;
+    padding:13px;
+    margin-top:15px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:20px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#4b5dc7;
+
+}
+
+
+/* Links */
+
+.login-links{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+
+.forgot{
+
+    color:red;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+
+.register-text{
+
+    margin-top:8px;
+    color:#333;
+
+}
+
+
+.register{
+
+    color:#8e44ad;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+
+.login-links a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+.error{
+
+    color:red;
+    margin-top:15px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- Top Navigation -->
+
+<nav>
+
+    <div class="logo-title">
+
+        🍱 School Meal Management System
+
+    </div>
+
+
+    <a href="/signup" class="signup-top">
+
+        📝 Sign Up
+
+    </a>
+
+</nav>
+
+
+
+<!-- Login Container -->
+
+<div class="login-container">
+
+
+<div class="login-box">
+
+
+    <div class="logo">
+
+        🎓
+
+    </div>
+
+
+    <div class="welcome">
+
+        Welcome 👋
+
+    </div>
+
+
+    <div class="subtitle">
+
+        Smart Digital Meal Attendance & Food Planning
+
+    </div>
+
+
+    <h1>
+
+        School Meal<br>
+        Management System
+
+    </h1>
+
+
+    <h2>
+
+        Student Login
+
+    </h2>
+
+
+
+    <form method="POST">
+
+
+        <!-- Student ID -->
+
+        <div class="input-box">
+
+            <span>🆔</span>
+
+            <input type="text"
+                   name="student_id"
+                   placeholder="Enter Student ID"
+                   required>
+
+        </div>
+
+
+        <!-- Password -->
+
+        <div class="input-box">
+
+            <span>🔒</span>
+
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required>
+
+            <span onclick="togglePassword()"
+                  style="cursor:pointer;">
+
+                👁️
+
+            </span>
+
+        </div>
+
+
+        <button type="submit">
+
+            Login ➜
+
+        </button>
+
+
+    </form>
+
+
+
+    {% if error %}
+
+    <p class="error">
+
+        {{ error }}
+
+    </p>
+
+    {% endif %}
+
+
+
+    <!-- Forgot Password -->
+
+    <div class="login-links">
+
+        <a href="{{ url_for('forgot_password', from_page='student') }}"
+           class="forgot">
+
+            🔑 Forgot Password?
+
+        </a>
+
+
+        <div class="register-text">
+
+            New Student?
+
+            <a href="/signup"
+               class="register">
+
+                📝 Register
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function togglePassword(){
+
+    let password =
+        document.getElementById("password");
+
+    if(password.type == "password"){
+
+        password.type = "text";
+
+    }
+    else{
+
+        password.type = "password";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Food Feedback</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI',Arial;
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+
+}
+
+
+
+.feedback-card{
+
+    width:400px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
+}
+
+
+
+.icon{
+
+    font-size:65px;
+
+}
+
+
+
+h2{
+
+    color:#e67e22;
+    font-size:28px;
+
+}
+
+
+
+.subtitle{
+
+    color:#666;
+    margin-bottom:20px;
+
+}
+
+
+
+.input-box{
+
+    display:flex;
+    align-items:center;
+    background:#f5f5f5;
+    padding:12px;
+    border-radius:15px;
+    margin:15px 0;
+
+}
+
+
+
+.input-box span{
+
+    font-size:22px;
+    margin-right:10px;
+
+}
+
+
+
+input,textarea,select{
+
+    border:none;
+    outline:none;
+    background:none;
+    width:100%;
+    font-size:16px;
+
+}
+
+
+
+textarea{
+
+    height:80px;
+    resize:none;
+
+}
+
+
+
+button{
+
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:20px;
+    background:#e67e22;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:15px;
+
+}
+
+
+
+button:hover{
+
+    background:#ca6f1e;
+    transform:scale(1.03);
+
+}
+
+
+
+.back{
+
+    display:inline-block;
+    margin-top:15px;
+    background:#34495e;
+    color:white;
+    padding:12px 30px;
+    border-radius:20px;
+    text-decoration:none;
+
+}
+
+
+
+.footer{
+
+    margin-top:20px;
+    color:#888;
+    font-size:13px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="feedback-card">
+
+
+<div class="icon">
+
+⭐
+
+</div>
+
+
+
+<h2>
+Food Feedback
+</h2>
+
+
+<p class="subtitle">
+Share your meal experience
+</p>
+
+
+
+<form method="POST">
+
+
+
+<div class="input-box">
+
+<span>👤</span>
+
+<input type="text"
+name="name"
+placeholder="Enter Your Name"
+required>
+
+</div>
+
+
+
+<div class="input-box">
+
+<span>⭐</span>
+
+<select name="rating" required>
+
+<option value="">
+Select Rating
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐ Excellent
+</option>
+
+<option value="4">
+⭐⭐⭐⭐ Good
+</option>
+
+<option value="3">
+⭐⭐⭐ Average
+</option>
+
+<option value="2">
+⭐⭐ Poor
+</option>
+
+<option value="1">
+⭐ Very Poor
+</option>
+
+</select>
+
+</div>
+
+
+
+
+<div class="input-box">
+
+<span>💬</span>
+
+<textarea name="message"
+placeholder="Write your feedback..."
+required></textarea>
+
+</div>
+
+
+
+
+<button type="submit">
+
+📩 Submit Feedback
+
+</button>
+
+
+
+</form>
+
+<a href="/student_dashboard" class="back">
+
+⬅ Back
+
+</a>
+
+
+
+
+<div class="footer">
+
+🍱 Smart Digital Meal Feedback System
+
+</div>
+
+
+
+</div>
+
+
+</body>
+
+
+</html>

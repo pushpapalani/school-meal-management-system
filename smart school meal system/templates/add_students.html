@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Add Student</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI',Arial;
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+
+}
+
+
+
+.student-card{
+
+    width:450px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    text-align:center;
+
+}
+
+
+
+.icon{
+
+    font-size:60px;
+
+}
+
+
+
+h2{
+
+    color:#11998e;
+    font-size:28px;
+
+}
+
+
+
+.subtitle{
+
+    color:#666;
+    margin-bottom:25px;
+
+}
+
+
+
+.input-box{
+
+    text-align:left;
+    margin-bottom:15px;
+
+}
+
+
+
+label{
+
+    font-weight:bold;
+    color:#444;
+
+}
+
+
+
+input,select{
+
+    width:100%;
+    padding:12px;
+    margin-top:7px;
+    border:none;
+    outline:none;
+    background:#f2f2f2;
+    border-radius:12px;
+    font-size:15px;
+
+}
+
+
+
+button{
+
+    width:100%;
+    padding:13px;
+    margin-top:15px;
+    background:#11998e;
+    color:white;
+    border:none;
+    border-radius:20px;
+    font-size:17px;
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#0b7d73;
+    transform:scale(1.03);
+
+}
+
+
+
+.back{
+
+    display:inline-block;
+    margin-top:20px;
+    background:#34495e;
+    color:white;
+    padding:12px 30px;
+    border-radius:20px;
+    text-decoration:none;
+
+}
+
+
+
+.footer{
+
+    margin-top:20px;
+    color:#888;
+    font-size:13px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+{% if message %}
+
+<script>
+alert("{{ message }}");
+</script>
+
+{% endif %}
+
+
+<div class="student-card">
+
+
+
+<div class="icon">
+
+👨‍🎓
+
+</div>
+
+
+
+<h2>
+Add Student Details
+</h2>
+
+
+
+<p class="subtitle">
+Register New Student Information
+</p>
+
+
+
+
+<form method="POST">
+
+
+
+<div class="input-box">
+
+<label>Student ID</label>
+<input type="text"
+name="student_id"
+placeholder="S001"
+pattern="S[0-9]{3}"
+title="Student ID format S001"
+required>
+
+</div>
+
+
+
+
+<div class="input-box">
+
+<label>Name</label>
+
+<input type="text"
+name="name"
+placeholder="Student Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Class</label>
+
+<input type="text"
+name="class"
+placeholder="1-8"
+required>
+
+</div>
+<div class="input-box">
+
+<label>Phone</label>
+
+<input type="tel"
+name="phone"
+placeholder="9000000001"
+pattern="[0-9]{10}"
+maxlength="10"
+title="Enter valid 10 digit phone number"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Gender</label>
+
+<select name="gender" required>
+
+<option value="">
+Select Gender
+</option>
+
+<option value="Male">
+👦 Male
+</option>
+
+<option value="Female">
+👧 Female
+</option>
+
+</select>
+
+</div>
+
+
+<div class="input-box">
+
+<label>Phone Type</label>
+
+<select name="phone_type" required>
+
+<option value="Smartphone">
+📱 Smartphone
+</option>
+
+<option value="Button Phone">
+☎ Button Phone
+</option>
+
+
+</select>
+
+</div>
+
+<button type="submit">
+
+➕ Add Student
+
+</button>
+
+</form>
+<button type="button" class="back" onclick="history.back()">
+
+⬅ Back
+
+</button>
+
+</div>
+
+</body>
+
+</html>

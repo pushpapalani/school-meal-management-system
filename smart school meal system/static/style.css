@@ -1,0 +1,658 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+
+    height:70px;
+    background:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    font-size:26px;
+    font-weight:bold;
+    color:#0f172a;
+
+}
+
+.signup-btn{
+
+    text-decoration:none;
+
+    background:#2563eb;
+    color:white;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.signup-btn:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+/* ---------- MAIN ---------- */
+
+.container{
+
+    width:430px;
+
+    background:rgba(255,255,255,.95);
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.container h1{
+
+    color:#1e293b;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#64748b;
+
+    margin-bottom:35px;
+
+    line-height:24px;
+
+}
+
+.buttons button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.student{
+
+    background:#10b981;
+    color:white;
+
+}
+
+.student:hover{
+
+    background:#059669;
+    transform:scale(1.03);
+
+}
+
+.admin{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+.admin:hover{
+
+    background:#1d4ed8;
+    transform:scale(1.03);
+
+}
+
+.forgot{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    text-decoration:none;
+
+    color:#dc2626;
+
+    font-weight:bold;
+
+}
+
+.forgot:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    background:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:15px;
+
+    color:#475569;
+
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px){
+
+nav{
+
+    padding:15px;
+
+    flex-direction:column;
+
+    height:auto;
+
+}
+
+.logo{
+
+    font-size:20px;
+    text-align:center;
+
+}
+
+.container{
+
+    width:92%;
+    padding:30px;
+
+}
+
+}
+/* ---------- ADMIN LOGIN ---------- */
+
+.login-box{
+
+    width:380px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+    margin:auto;
+
+}
+
+
+body:has(.login-box){
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+.icon{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+
+.login-box h1{
+
+    color:#1e293b;
+
+    margin-bottom:15px;
+
+}
+
+
+.login-box h2{
+
+    margin-bottom:25px;
+
+}
+
+
+.input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    background:#f1f5f9;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:18px;
+
+}
+
+
+.input-group span{
+
+    font-size:20px;
+
+    margin-right:10px;
+
+}
+
+
+.input-group input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    width:100%;
+
+    font-size:16px;
+
+}
+
+
+.login-box button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.login-box button:hover{
+
+    background:#1d4ed8;
+
+}
+/* DAILY REPORT */
+
+.report-box{
+
+width:750px;
+
+margin:40px auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+text-align:center;
+
+}
+
+
+.report-box h1{
+
+color:#1e293b;
+
+margin-bottom:10px;
+
+}
+
+
+.date{
+
+color:#64748b;
+
+font-size:18px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.section{
+
+margin-top:25px;
+
+}
+
+
+
+.card{
+
+background:#f8fafc;
+
+padding:18px;
+
+margin:15px 0;
+
+border-radius:12px;
+
+font-size:18px;
+
+}
+
+
+
+.stats{
+
+display:flex;
+
+gap:20px;
+
+justify-content:center;
+
+}
+
+
+.stat-card{
+
+background:#e0f2fe;
+
+padding:20px;
+
+border-radius:15px;
+
+width:180px;
+
+}
+
+
+.stat-card span{
+
+font-size:35px;
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+.stat-card.total{
+
+background:#dcfce7;
+
+}
+
+
+
+.analysis{
+
+margin-top:25px;
+
+background:#fef9c3;
+
+padding:20px;
+
+border-radius:15px;
+
+font-size:20px;
+
+}
+
+
+
+.print-btn{
+
+margin-top:25px;
+
+padding:14px 30px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:30px;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+
+.print-btn:hover{
+
+background:#1d4ed8;
+
+}
+
+
+@media(max-width:700px){
+
+.report-box{
+
+width:90%;
+
+}
+
+
+.stats{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+/* WEEKLY MENU */
+
+.menu-box{
+
+width:90%;
+
+max-width:1100px;
+
+margin:40px auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+.menu-box h1{
+
+text-align:center;
+
+color:#1e293b;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+color:#64748b;
+
+margin-bottom:30px;
+
+}
+
+
+
+.menu-section{
+
+margin-top:35px;
+
+}
+
+
+
+.menu-section h2{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px;
+
+border-radius:10px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+
+
+th{
+
+background:#10b981;
+
+color:white;
+
+padding:15px;
+
+font-size:17px;
+
+}
+
+
+
+td{
+
+padding:15px;
+
+border-bottom:1px solid #ddd;
+
+font-size:16px;
+
+}
+
+
+
+tr:hover{
+
+background:#f0fdf4;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+@media(max-width:700px){
+
+.menu-box{
+
+width:95%;
+
+padding:20px;
+
+}
+
+
+table{
+
+font-size:13px;
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+}

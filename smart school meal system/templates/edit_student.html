@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+
+    <style>
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial,sans-serif;
+        background:linear-gradient(135deg,#4facfe,#00f2fe);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .box{
+        background:white;
+        width:420px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,.25);
+    }
+
+    h2{
+        text-align:center;
+        color:#0077cc;
+        margin-bottom:25px;
+    }
+
+    label{
+        font-weight:bold;
+        display:block;
+        margin-bottom:5px;
+    }
+
+    input,
+    select{
+        width:100%;
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        margin-bottom:18px;
+        font-size:15px;
+        box-sizing:border-box;
+    }
+
+    input:focus,
+    select:focus{
+        border:2px solid #0077cc;
+        outline:none;
+    }
+
+    .btn{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;
+        color:white;
+        margin-top:8px;
+    }
+
+    .update{
+        background:#28a745;
+    }
+
+    .update:hover{
+        background:#218838;
+    }
+
+    .back{
+        background:#007bff;
+    }
+
+    .back:hover{
+        background:#0056b3;
+    }
+
+    a{
+        text-decoration:none;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>✏️ Edit Student</h2>
+
+<form method="POST">
+
+<label>👤 Name</label>
+<input type="text" name="name" value="{{ student[2] }}" required>
+
+<label>🏫 Class</label>
+<input type="text" name="class" value="{{ student[3] }}" required>
+
+<label>📱 Phone</label>
+<input type="tel"
+       name="phone"
+       value="{{ student[4] }}"
+       maxlength="10"
+       pattern="[0-9]{10}"
+       inputmode="numeric"
+       required>
+
+<label>📲 Phone Type</label>
+<select name="phone_type">
+    <option {% if student[5]=='Smartphone' %}selected{% endif %}>Smartphone</option>
+    <option {% if student[5]=='Button Phone' %}selected{% endif %}>Button Phone</option>
+</select>
+
+<label>👦 / 👧 Gender</label>
+<select name="gender">
+    <option {% if student[6]=='Boy' %}selected{% endif %}>Boy</option>
+    <option {% if student[6]=='Girl' %}selected{% endif %}>Girl</option>
+</select>
+
+<button type="submit" class="btn update">
+💾 Update Student
+</button>
+
+</form>
+
+<br>
+
+<a href="/view_students">
+    <button class="btn back">
+⬅ Back to Students
+</button>
+</a>
+
+</div>
+
+</body>
+</html>

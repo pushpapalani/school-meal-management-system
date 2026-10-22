@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Button Phone SMS Attendance</title>
+
+<style>
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI',Arial;
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+
+}
+
+
+.sms-card{
+
+    width:450px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    text-align:center;
+
+}
+
+
+h2{
+
+    color:#11998e;
+    font-size:28px;
+
+}
+
+
+label{
+
+    font-weight:bold;
+    color:#444;
+
+}
+
+
+input{
+
+    width:90%;
+    padding:12px;
+    margin-top:8px;
+    border:none;
+    outline:none;
+    background:#f2f2f2;
+    border-radius:12px;
+    font-size:15px;
+
+}
+
+
+.meal-box{
+
+    margin-top:20px;
+    background:#e8f5e9;
+    padding:20px;
+    border-radius:20px;
+
+}
+
+
+button{
+
+    width:40%;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:20px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+.yes{
+
+    background:#27ae60;
+
+}
+
+
+.no{
+
+    background:#e74c3c;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+.info-box{
+
+    margin-top:25px;
+    background:#f2f2f2;
+    padding:15px;
+    border-radius:20px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+{% if message %}
+
+<script>
+
+alert("{{ message }}");
+
+</script>
+
+{% endif %}
+
+
+
+<div class="sms-card">
+
+
+<h2>
+📞 Button Phone SMS Attendance
+</h2>
+
+
+
+<form method="POST" action="/sms_attendance">
+
+
+
+<label>
+Parent Mobile Number
+</label>
+
+<br>
+
+
+<input type="text"
+name="phone"
+placeholder="Enter Mobile Number"
+required>
+
+
+<br>
+
+
+
+<div class="meal-box">
+
+
+<h3>
+🍳 Breakfast Attendance
+</h3>
+
+
+<button class="yes"
+type="submit"
+name="action"
+value="BREAKFAST YES">
+
+✅ YES
+
+</button>
+
+
+<button class="no"
+type="submit"
+name="action"
+value="BREAKFAST NO">
+
+❌ NO
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="meal-box">
+
+
+<h3>
+🍛 Lunch Attendance
+</h3>
+
+
+<button class="yes"
+type="submit"
+name="action"
+value="LUNCH YES">
+
+✅ YES
+
+</button>
+
+
+<button class="no"
+type="submit"
+name="action"
+value="LUNCH NO">
+
+❌ NO
+
+</button>
+
+
+</div>
+
+
+
+</form>
+
+
+
+
+
+<div class="info-box">
+
+
+<h3>
+📱 Attendance Process
+</h3>
+
+
+<p>
+👨‍🎓 Student identified using parent mobile number
+</p>
+
+
+<p>
+🍱 Meal selected by parent
+</p>
+
+
+<p>
+✅ YES - Attendance Confirmed
+</p>
+
+
+<p>
+❌ NO - Not Attending
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</body>
+
+</html>

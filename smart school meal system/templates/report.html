@@ -1,0 +1,117 @@
+html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Daily Report</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="report-box">
+
+<h1>📄 Daily Meal Report</h1>
+
+<p class="date">📅 Date : {{ report_date }}</p>
+
+
+<h2>🍱 Today Menu</h2>
+
+<div class="card">
+
+🍳 <b>Breakfast</b>
+
+<p>{{ breakfast_menu }}</p>
+
+</div>
+
+
+<div class="card">
+
+🍛 <b>Lunch</b>
+
+<p>{{ lunch_menu }}</p>
+
+</div>
+
+
+<h2>👨‍🎓 Attendance Summary</h2>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>🍳 Breakfast</h3>
+
+<span>{{ breakfast }}</span>
+
+<p>Students</p>
+
+</div>
+
+
+<div class="stat-card">
+
+<h3>🍛 Lunch</h3>
+
+<span>{{ lunch }}</span>
+
+<p>Students</p>
+
+</div>
+
+
+<div class="stat-card total">
+
+<h3>🍽 Total Meals</h3>
+
+<span>{{ breakfast + lunch }}</span>
+
+<p>Meals</p>
+
+</div>
+
+</div>
+
+
+<h2>📊 Student Feedback Analysis</h2>
+
+<div class="analysis">
+
+{{ analysis }}
+
+</div>
+
+
+<!-- Back Button -->
+
+<div style="text-align:center; margin-top:30px; margin-bottom:20px;">
+
+<a href="javascript:history.back()"
+   style="
+   display:inline-block;
+   padding:12px 25px;
+   background:#333;
+   color:white;
+   text-decoration:none;
+   border-radius:8px;
+   font-size:16px;
+   font-weight:bold;">
+
+⬅ Back
+
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>
+
